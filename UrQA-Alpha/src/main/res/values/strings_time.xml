@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="time_one_minute">1 minute</string>
+    <string name="time_ten_minutes">10 minutes</string>
+    <string name="time_half_hour">Half hour</string>
+    <string name="time_one_hour">1 hour</string>
+    <string name="time_three_hour">3 hours</string>
+</resources>
