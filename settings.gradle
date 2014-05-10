@@ -1,1 +1,2 @@
-include ':UrQA-Alpha'
+include ':UrQA-StressTest'
+include ':libraries:URQANative'
