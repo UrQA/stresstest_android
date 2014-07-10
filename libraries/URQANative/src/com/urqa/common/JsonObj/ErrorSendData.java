@@ -8,8 +8,9 @@ import org.json.JSONObject;
 
 import com.urqa.common.StateData;
 import com.urqa.eventpath.EventPath;
+import com.urqa.library.model.JsonInterface;
 
-public class ErrorSendData extends JsonObj {
+public class ErrorSendData extends JsonObj implements JsonInterface {
 	public ErrorSendData() {
 		// TODO Auto-generated constructor stub
 		sdkversion = StateData.SDKVersion;
@@ -46,6 +47,7 @@ public class ErrorSendData extends JsonObj {
 		sysmemlow = 0; // int 0 = not 1 = ok
 		tag = "";
 		rank = -1;
+		consoleLog = "";
 	}
 
 	public String sdkversion;
@@ -174,74 +176,85 @@ public class ErrorSendData extends JsonObj {
 	 */
 	public int sysmemlow;
 
+	/**
+	 * console log
+	 */
+	public String consoleLog;
+
 	public String lastactivity;
 
 	public List<EventPath> eventpaths;
 
 	@Override
 	public String toJson() {
-		// TODO Auto-generated method stub
-		JSONObject jsonObject = new JSONObject();
-		try {
-			jsonObject.put("sdkversion", sdkversion);
-			jsonObject.put("locale", locale);
-			jsonObject.put("tag", tag);
-			jsonObject.put("rank", rank);
-			jsonObject.put("callstack", callstack);
-			jsonObject.put("apikey", apikey);
-			jsonObject.put("datetime", datetime);
-			jsonObject.put("device", device);
-			jsonObject.put("country", country);
-			jsonObject.put("errorname", errorname);
-			jsonObject.put("errorclassname", errorclassname);
-			jsonObject.put("linenum", linenum);
-			jsonObject.put("appversion", appversion);
-			jsonObject.put("osversion", osversion);
-			jsonObject.put("gpson", gpson);
-			jsonObject.put("wifion", wifion);
-			jsonObject.put("mobileon", mobileon);
-			jsonObject.put("scrwidth", scrwidth);
-			jsonObject.put("scrheight", scrheight);
-			jsonObject.put("batterylevel", batterylevel);
-			jsonObject.put("availsdcard", availsdcard);
-			jsonObject.put("rooted", rooted);
-			jsonObject.put("appmemtotal", appmemtotal);
-			jsonObject.put("appmemfree", appmemfree);
-			jsonObject.put("appmemmax", appmemmax);
-			jsonObject.put("kernelversion", kernelversion);
-			jsonObject.put("xdpi", xdpi);
-			jsonObject.put("ydpi", ydpi);
-			jsonObject.put("scrorientation", scrorientation);
-			jsonObject.put("sysmemlow", sysmemlow);
-			jsonObject.put("lastactivity", lastactivity);
-			////////////////Event Path 계산////////////////////
-			JSONArray eventpath = new JSONArray();
-			for(int i = 0 ; i < eventpaths.size(); i++)
-			{
-				JSONObject event = new JSONObject();
-				
-				event.put("datetime", eventpaths.get(i).getDatetime());
-				event.put("classname", eventpaths.get(i).getClassName());
-				event.put("methodname", eventpaths.get(i).getMethodName());
-				event.put("label", eventpaths.get(i).getLabel());
-				event.put("linenum", eventpaths.get(i).getLine());
-				
-				eventpath.put(event);
-			}
-			jsonObject.put("eventpaths", eventpath);
-			
-			return jsonObject.toString();
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return "";
-		}
+		return toJSONObject().toString();
 	}
 
 	@Override
 	public void fromJson(String JsonString) {
-		// TODO Auto-generated method stub
 
 	}
 
+	@Override
+	public JSONObject toJSONObject() {
+		JSONObject object = new JSONObject();
+		try {
+            object.put("sdkversion", sdkversion);
+            object.put("locale", locale);
+            object.put("tag", tag);
+            object.put("rank", rank);
+            object.put("callstack", callstack);
+            object.put("apikey", apikey);
+            object.put("datetime", datetime);
+            object.put("device", device);
+            object.put("country", country);
+            object.put("errorname", errorname);
+            object.put("errorclassname", errorclassname);
+            object.put("linenum", linenum);
+            object.put("appversion", appversion);
+            object.put("osversion", osversion);
+            object.put("gpson", gpson);
+            object.put("wifion", wifion);
+            object.put("mobileon", mobileon);
+            object.put("scrwidth", scrwidth);
+            object.put("scrheight", scrheight);
+            object.put("batterylevel", batterylevel);
+            object.put("availsdcard", availsdcard);
+            object.put("rooted", rooted);
+            object.put("appmemtotal", appmemtotal);
+            object.put("appmemfree", appmemfree);
+            object.put("appmemmax", appmemmax);
+            object.put("kernelversion", kernelversion);
+            object.put("xdpi", xdpi);
+            object.put("ydpi", ydpi);
+            object.put("scrorientation", scrorientation);
+            object.put("sysmemlow", sysmemlow);
+            object.put("lastactivity", lastactivity);
+            object.put("eventpaths", getEventPath());
+		} catch (JSONException e) {
+
+		}
+		return object;
+	}
+
+    /**
+	 * Event Path 계산
+	 * @return
+	 */
+	private JSONArray getEventPath() throws JSONException {
+		JSONArray array = new JSONArray();
+        for (EventPath eventpath : eventpaths) {
+            JSONObject object = new JSONObject();
+
+            object.put("datetime", eventpath.getDatetime());
+            object.put("classname", eventpath.getClassName());
+            object.put("methodname", eventpath.getMethodName());
+            object.put("label", eventpath.getLabel());
+            object.put("linenum", eventpath.getLine());
+
+            array.put(object);
+        }
+		
+		return array;
+	}
 }

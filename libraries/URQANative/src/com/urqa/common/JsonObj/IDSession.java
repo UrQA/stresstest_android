@@ -3,26 +3,29 @@ package com.urqa.common.JsonObj;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * @deprecated Use {@link com.urqa.library.model.Authentication}.
+ */
+@Deprecated
 public class IDSession extends JsonObj{
-	public String idsession;
+	private String mId;
 
 	@Override
 	public String toJson() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void fromJson(String JsonString) {
-		// TODO Auto-generated method stub
-		
 		try {
 			JSONObject obj = new JSONObject(JsonString);
-			idsession = obj.get("idsession").toString(); 
+			mId = obj.get("idsession").toString(); 
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+	}
+
+	public String getId() {
+		return mId;
 	}
 }

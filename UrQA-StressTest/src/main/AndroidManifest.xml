@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.urqa.alpha">
+          package="com.urqa.stress">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -10,9 +10,9 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-        android:name=".app.App">
+        android:name="com.urqa.stress.app.App">
         <activity
-            android:name="com.urqa.alpha.MainActivity"
+            android:name="com.urqa.stress.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -22,11 +22,12 @@
         </activity>
 
         <service
-            android:name=".service.ExecuteService"
+            android:name="com.urqa.stress.service.ExecuteService"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"
+            android:permission="com.urqa.stress">
             <intent-filter>
-                <action android:name="com.urqa.alpha.action.SERVICE"/>
+                <action android:name="com.urqa.stress.action.SERVICE"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>

@@ -1,5 +1,8 @@
 package com.urqa.Collector;
 
+import java.util.Calendar;
+import java.util.TimeZone;
+
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -20,18 +23,32 @@ public class ErrorReportFactory {
 		ErrorReport report = new ErrorReport();
 		report.ErrorData = CreateSendData(e,tag,rank,context);
 		report.LogData	 = LogCollector.getLog(context);
-		
+		report.mId = createId();
+		report.mUrQAVersion = getUrQAVersion();
 		return report;
 	}
 	
+
+
 	public static ErrorReport CreateNativeErrorReport(Context context)
 	{
 		ErrorReport report = new ErrorReport();
 		report.ErrorData = CreateNativeSendData(context);
 		report.LogData	 = LogCollector.getLog(context);
-		
+        report.mId = createId();
+        report.mUrQAVersion = StateData.SDKVersion;
 		return report;
 	}
+
+
+    private static long createId() {
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        return  calendar.getTimeInMillis();
+    }
+    
+    private static String getUrQAVersion() {
+        return  StateData.SDKVersion;
+    }
 	
 	private static ErrorSendData CreateNativeSendData(Context context)
 	{

@@ -1,5 +1,6 @@
 package com.urqa.common.JsonObj;
 
+@Deprecated
 public abstract class JsonObj
 {
 

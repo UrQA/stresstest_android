@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/seunoh/Workspaces/ur-qa/stresstest_android/UrQA-StressTest/build/intermediates/pre-dexed/debug/guava-17.0-4b7c4b3c9fd4afceee56ea0ec7c7f384033fe2c2.jar"
+        jar="/Users/seunoh/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/17.0/9c6ef172e8de35fd8d4d8783e4821e57cdef7445/guava-17.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9c6ef172e8de35fd8d4d8783e4821e57cdef7445"/>
+    <item
+        dex="/Users/seunoh/Workspaces/ur-qa/stresstest_android/UrQA-StressTest/build/intermediates/pre-dexed/debug/gson-2.2.4-e16361c01200a8f6a23c5ec33685854c7336d90e.jar"
+        jar="/Users/seunoh/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568"/>
+    <item
+        dex="/Users/seunoh/Workspaces/ur-qa/stresstest_android/UrQA-StressTest/build/intermediates/pre-dexed/debug/classes-861dd7acc2f6a4d0d82e877d1ed1dc7aebd5055b.jar"
+        jar="/Users/seunoh/Workspaces/ur-qa/stresstest_android/build/intermediates/exploded-aar/stresstest_android.libraries/URQANative/unspecified/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="bf615f22d0107a60f7223af13fc7c44abe2fcca7"/>
+    <item
+        dex="/Users/seunoh/Workspaces/ur-qa/stresstest_android/UrQA-StressTest/build/intermediates/pre-dexed/debug/support-v4-19.1.0-fe930dc68beb1e566675ce71b270d4091c6c249b.jar"
+        jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="/Users/seunoh/Workspaces/ur-qa/stresstest_android/UrQA-StressTest/build/intermediates/pre-dexed/debug/classes-9d062bf367148cad50837bf2539f44c5d464ca0f.jar"
+        jar="/Users/seunoh/Workspaces/ur-qa/stresstest_android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="/Users/seunoh/Workspaces/ur-qa/stresstest_android/UrQA-StressTest/build/intermediates/pre-dexed/debug/joda-time-2.3-4e93b2a40c43a9ce3d8b9e5e04525d525e6759ef.jar"
+        jar="/Users/seunoh/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.3/56498efd17752898cfcc3868c1b6211a07b12b8f/joda-time-2.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="56498efd17752898cfcc3868c1b6211a07b12b8f"/>
+
+</pre-dex-items>

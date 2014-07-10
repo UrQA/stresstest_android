@@ -6,7 +6,7 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context="com.urqa.alpha.MainFragment">
+                tools:context="com.urqa.stress.MainFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -141,20 +141,6 @@
             android:layout_width="match_parent"
             android:layout_height="20dp"/>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-
-            <TextView
-                android:id="@+id/file_path"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:textSize="15sp"/>
-        </FrameLayout>
-
-
         <View
             android:layout_width="match_parent"
             android:layout_height="20dp"/>
@@ -176,14 +162,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/stop"/>
         </FrameLayout>
-
-
-        <Button
-            android:id="@+id/result_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/send_data_list"
-            android:visibility="gone"/>
 
 
         <View

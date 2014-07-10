@@ -3,8 +3,6 @@ package com.urqa.eventpath;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.util.Log;
-
 import com.urqa.Collector.DateCollector;
 import com.urqa.common.StateData;
 
